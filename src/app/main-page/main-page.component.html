@@ -1,0 +1,5 @@
+<button (click)="goToRegisterRoom()">Đăng ký phòng</button><br>
+<button (click)="goToUpdateAccount()">Nâng cấp tài khoản</button><br>
+<div class="areaContain" *ngFor="let area of areas">
+    <button class="area" (click)="goToListRoom(area)">{{area}}</button>
+</div>
