@@ -1,0 +1,23 @@
+<div class="main">
+    <h1 class="title">Đăng Ký</h1>
+    <form [formGroup]="signinForm">
+        <p>Nhập tài khoản</p>
+        <input formControlName="username">
+        <p class="error" *ngIf="signinForm.get('username')?.invalid && signinForm.get('username')?.touched">*Không được để trống tài khoản</p>
+        <p>Nhập mật khẩu</p>
+        <input type="password" formControlName="password">
+        <p class="error" *ngIf="signinForm.get('password')?.invalid && signinForm.get('password')?.touched">*Không được để trống mật khẩu</p>
+        <p>Nhập lại mật khẩu</p>
+        <input type="password" formControlName="password">
+        <p class="error" *ngIf="(signinForm.get('passwordAgain')?.invalid || signinForm.get('passwordAgin')?.value != signinForm.get('password')?.value) && signinForm.get('password')?.touched">*Mật khẩu phải trùng nhau</p>
+        <button class="loginBtn" (click)="onSubmit()">Đăng Ký</button>
+    </form>
+</div>
+<div class="fullscreen" *ngIf="click">
+    <div class="notification">
+        <p>Bạn đã đăng ký thành công với tư cách là sinh viên</p>
+        <p>Nếu bạn là giáo viên hãy liên hệ với admin đễ được nâng cấp tài khoản</p>
+        <button (click)="goToMainPage()">Đã hiểu</button>
+    </div>
+</div>
+

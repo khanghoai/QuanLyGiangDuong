@@ -1,0 +1,29 @@
+
+
+.areaContain{
+    display: inline-block;
+}
+
+.area{
+    height: 100px;
+    width: 100px;
+    margin: 50px;
+}
+
+.area:hover{
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.header{
+    background-color: blue;
+}
+
+.header button{
+    margin: 10px;
+}
+
+.logOut{
+    position: relative;
+    left: 0;
+}

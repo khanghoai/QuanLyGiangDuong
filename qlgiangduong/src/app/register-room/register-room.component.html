@@ -1,0 +1,41 @@
+<div class="day">
+  <mat-form-field>
+    <mat-select [(value)]="dayChose" placeholder="Ngày">
+      @for (day of days; track day) {
+        <mat-option [value]="day">{{day}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field><br>
+  <mat-form-field>
+    <mat-select [(value)]="weekChose" placeholder="Tháng">
+      @for (month of months; track month) {
+        <mat-option [value]="month">{{month}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field><br>
+</div>
+<div class="period">
+  <mat-form-field>
+    <mat-select [(value)]="timeStartChose" placeholder="Tiết bắt đầu">
+      @for (time of Times; track time) {
+        <mat-option [value]="time">{{time}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field><br>
+  <mat-form-field>
+    <mat-select [(value)]="timeChose" placeholder="Số tiết">
+      <mat-option value="1">1</mat-option>
+      <mat-option value="2">2</mat-option>
+      <mat-option value="3">3</mat-option>
+    </mat-select>
+  </mat-form-field><br>
+</div>
+
+<form [formGroup]="formGroup">
+  <input type="text" formControlName="capacity" placeholder="Số học sinh">
+</form>
+
+<mat-checkbox [checked]="micCheck" (change)="updateMic()">Mic</mat-checkbox>
+<mat-checkbox [checked]="screenCheck" (change)="updateScreen()">Màn hình</mat-checkbox>
+
+<!-- <br><button (click)="goToFindRoom()">Tìm phòng</button> -->
